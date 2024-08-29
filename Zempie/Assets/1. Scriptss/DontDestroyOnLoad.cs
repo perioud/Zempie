@@ -42,11 +42,13 @@ public class DontDestroyOnLoadManager : MonoBehaviour
     {
         // 현재 씬에 따라 트리거 스위치 온오프
         int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex == 0)
+        //if (currentSceneIndex == 0)
+        if (currentSceneIndex == 3)
         {
             objectCollider.isTrigger = triggerEnabledInScene0; // 0번째 씬에서는 트리거 활성화
         }
-        else if (currentSceneIndex == 1)
+        //else if (currentSceneIndex == 1)
+        else if (currentSceneIndex == 4)
         {
             objectCollider.isTrigger = triggerEnabledInScene1; // 1번째 씬에서는 트리거 비활성화
         }
