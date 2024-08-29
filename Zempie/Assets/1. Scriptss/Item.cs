@@ -11,9 +11,15 @@ public class Item : MonoBehaviour
 
     private Collider2D objectCollider;
     private bool isCollidingWithPlayer = false; // 플레이어와의 충돌 상태 저장
+    private bool isCollidingWithItemArea = false; // itemarea와의 충돌 상태 저장
 
     // 아이템의 삭제 상태를 메모리 내에서 관리하는 static 변수
     private static HashSet<string> destroyedItems = new HashSet<string>();
+
+    public static int itemCount = 0;
+
+    // `itemArea`를 클래스 멤버로 선언
+    public GameObject itemArea; // itemArea 오브젝트 참조
 
     void Start()
     {
@@ -42,11 +48,15 @@ public class Item : MonoBehaviour
 
     void Update()
     {
+        // Debug 로그로 현재 상태를 출력
+        
+
         if (UI != null && gameObject.activeInHierarchy) // UI가 할당되고, 게임 오브젝트가 활성화된 경우에만 UI 상태를 변경합니다.
         {
-            // 스페이스바 입력 상태 저장
             if (isCollidingWithPlayer && Input.GetKey(KeyCode.Space))
             {
+                Debug.Log("Space key pressed while colliding with player.");
+
                 // UI를 활성화하고 아이템을 비활성화
                 UI.SetActive(true);
                 Destroy(UI, 2f);
@@ -56,7 +66,8 @@ public class Item : MonoBehaviour
 
                 // 아이템 오브젝트 파괴
                 Destroy(gameObject);
-                Debug.Log("Item obtained and ItemOb deactivated.");
+                itemCount++;
+                Debug.Log("Item obtained. Item count: " + itemCount);
 
                 Trash.SetActive(true);
             }
@@ -68,11 +79,12 @@ public class Item : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (objectCollider != null && objectCollider.isTrigger && other.CompareTag("Player"))
         {
-            Debug.Log("Collision with Player: " + isCollidingWithPlayer);
+            Debug.Log("Entered Collision with Player");
             isCollidingWithPlayer = true; // 플레이어와 충돌 상태 설정
         }
     }
