@@ -26,10 +26,10 @@ public class TextManager : MonoBehaviour
             text_2.SetActive(true);
             textCount ++;
             Debug.Log(textCount);
-                if(textCount >= 2)
+                if(textCount == 2)
                 {
                 // 마지막 텍스트 이후에는 지정된 씬으로 전환
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene(1);
                 }
         }
     }

@@ -18,6 +18,6 @@ public class TitleScene : MonoBehaviour
     }
     public void SceneCh()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
     }
 }

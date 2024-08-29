@@ -55,15 +55,13 @@ public class PlayerController : MonoBehaviour
         {
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            if (currentSceneIndex == 3)
+            if (currentSceneIndex == 0)
             {
-                //SceneManager.LoadScene(1); // 0번 씬에서 1번 씬으로 전환
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene(1); // 0번 씬에서 1번 씬으로 전환
             }
-            else if (currentSceneIndex == 4)
+            else if (currentSceneIndex == 1)
             {
-                //SceneManager.LoadScene(0); // 1번 씬에서 0번 씬으로 전환
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(0); // 1번 씬에서 0번 씬으로 전환
             }
         }
     }
