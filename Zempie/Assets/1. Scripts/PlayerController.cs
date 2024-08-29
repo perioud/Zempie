@@ -35,6 +35,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -63,6 +64,20 @@ public class PlayerController : MonoBehaviour
         {
             // 수직 이동만 활성화
             rb.velocity = new Vector2(0, moveInputY * moveSpeed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            if (currentSceneIndex == 0)
+            {
+                SceneManager.LoadScene(1); // 0번 씬에서 1번 씬으로 전환
+            }
+            else if (currentSceneIndex == 1)
+            {
+                SceneManager.LoadScene(0); // 1번 씬에서 0번 씬으로 전환
+            }
         }
     }
 }
