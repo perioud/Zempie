@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
             PlayerPrefs.SetFloat("SavedTime", curTime);
         }
 
-        time = 180;
+        time = 60;
         StartCoroutine(StartTimer());
         if (instance == null)
         {
@@ -70,3 +70,5 @@ public class Timer : MonoBehaviour
         }
     }
 }
+
+

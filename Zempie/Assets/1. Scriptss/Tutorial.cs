@@ -9,7 +9,6 @@ public class TextManager : MonoBehaviour
     public GameObject text_2; // UI 텍스트 배열
     private int textCount = 0;
 
-    private int currentTextIndex = 0; // 현재 텍스트 인덱스
 
     void Start()
     {
