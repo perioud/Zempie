@@ -28,7 +28,7 @@ public class TextManager : MonoBehaviour
                 if(textCount == 2)
                 {
                 // 마지막 텍스트 이후에는 지정된 씬으로 전환
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 }
         }
     }
