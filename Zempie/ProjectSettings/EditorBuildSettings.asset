@@ -19,11 +19,14 @@ EditorBuildSettings:
     guid: 843e2d1e41d4c054c88018a61d2ef32e
   - enabled: 1
     path: Assets/0. Scenes/COPY_Chap1.Past.unity
-    guid: b0a7eb224212c824cb343dfba27f636d
+    guid: fca4b7b5362fae84aa5bd09577855167
   - enabled: 1
     path: Assets/0. Scenes/COPY_Chap1.Future.unity
-    guid: 80fb6d3be0716e84b8c2fbd27e5a3e20
+    guid: b30983918de119e4c9203013cda89cda
   - enabled: 1
     path: Assets/0. Scenes/Tutorial.unity
     guid: d2bfa8f3f663b674493e4b0ce444326f
+  - enabled: 1
+    path: Assets/0. Scenes/END.unity
+    guid: 640957f524d6c044cb28c5aef2c3919c
   m_configObjects: {}
